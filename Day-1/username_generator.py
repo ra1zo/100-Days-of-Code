@@ -22,10 +22,15 @@ def generate():
     first = [f_name, f_name[:1]]
     gen = (str(random.choice(first)) +
            l_name + str(random.choice(number)))
-    username.set(gen)
 
+    if len(gen) > 8:
+        username.set(gen)
+    else:
+        gen = str(gen) + str(randrange(9999))
+        username.set(gen)
 
 # Tkinter
+
 
 username = StringVar('')
 
